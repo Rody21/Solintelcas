@@ -1,0 +1,417 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Signika Negative', sans-serif;
+}
+
+/* ------------------------------------------------------------- */
+
+/* Encabezado*/
+
+.sol_header {
+    width: 100%;
+    height: 75px;
+    background: #101922;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+.sol_container_fluid {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.sol_logo {
+    float: left;
+    line-height: 75px;
+}
+
+.sol_logo img {
+    width: 70%;
+}
+
+.sol_header_menu {
+    float: right;
+    line-height: 75px;
+}
+
+.sol_header_menu a {
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 15px;
+    line-height: normal;
+    font-size: 14px;
+    transition: all 500ms ease;
+    border-bottom: 4px solid transparent;
+}
+
+.sol_header_menu a:hover {
+    color: #e76514;
+    border-bottom: 4px solid #e76514;
+}
+
+/* ------------------------------------------------------------- */
+
+/* Codigo Y Estilos Para Header En Pantalla Pequeña */
+#btn_menu {
+    display: none;
+}
+
+.sol_header_boton {
+    float: right;
+    display: none;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.sol_header_boton label {
+    color: #fff;
+    background: #2a343e;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    width: 60px;
+    height: 60px;
+}
+
+
+@media only screen and (min-width:300px) and (max-width:700px) {
+    .sol_header {
+        height: 100px;
+    }
+
+    .sol_logo,
+    .sol_header_boton {
+        line-height: 60px;
+    }
+
+    .sol_logo img {
+        width: 70%;
+    }
+
+    .sol_header_menu {
+        padding-top: 50%;
+        position: absolute;
+        background: #234;
+        width: 100%;
+        height: 100vh;
+        top: 100px;
+        left: 0;
+        transition: all 500ms ease;
+        transform: translateX(-100%);
+    }
+
+    .sol_header_menu a {
+        margin-bottom: 30px;
+        display: block;
+        text-align: center;
+    }
+
+    #btn_menu:checked~.sol_header_menu {
+        transform: translateX(0%);
+    }
+
+    .sol_header_boton {
+        display: block;
+    }
+}
+
+
+/* ------------------------------------------------------------- */
+
+/* Animacion del banner */
+.sol_banner_link {
+    opacity: 0;
+    animation: sol_keyframe_aparecer 1s;
+    -webkit-animation: sol_keyframe_aparecer 1s;
+    animation-fill-mode: forwards;
+}
+
+.sol_banner_link_1 {
+    opacity: 0;
+    animation: sol_keyframe_aparecer 1s;
+    -webkit-animation: sol_keyframe_aparecer 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+}
+
+
+.sol_cont_sec_1 {
+    padding: 10%;
+}
+
+/* ------------------------------------------------------------- */
+
+/* Diseño Para El Catalogo*/
+.sol_cont_cat {
+   text-align: center;
+   align-items: center;
+}
+
+.sol_cont_cat a{
+    border: 2px black solid;
+    text-decoration: none;
+    color: #e36504;
+    border-radius: 5px;
+    background-color: #101922;
+    padding: 5px 20px;
+}
+
+.sol_cont_cat a:hover{
+    text-decoration: none;
+    color: #3097f7;
+}
+
+.sol_cat_sect {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.sol_cat_card {
+    flex: 1;
+    margin: 20px 20px;
+    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    overflow: hidden;
+    background: white;
+    cursor: default;
+    transition: all 400ms ease;
+}
+
+.sol_cat_card:hover{
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.6);
+    transform: translateY(-3%);
+}
+
+.sol_cat_card img {
+    width: 100%;
+    height: auto;
+}
+
+.sol_cat_card h2 {
+    margin: 15px 0px;
+    font-size: 28px;
+    color: #1662a1;
+    font-family: sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+    .sol_cat_sect {
+        flex-direction: column;
+    }
+}
+
+/* ------------------------------------------------------------- */
+/* Pie De Pagina*/
+
+.sol_cont_footer {
+    width: 100%;
+    background-color: rgba(1, 1, 1, 0.7);
+}
+
+.sol_foot_grupo1 {
+    width: 100%;
+    max-width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    padding: 45px 0px;
+}
+
+.sol_box figure {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.sol_box img {
+    width: 300px;
+}
+
+.sol_box h2,
+.sol_social h2 {
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 25px;
+}
+
+.sol_box p {
+    color: #efefef;
+    margin-bottom: 10px;
+}
+
+.sol_social a {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 10px;
+    text-align: center;
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    transition: all 300ms ease;
+}
+
+.sol_social a:hover {
+    background: #fff;
+}
+
+.sol_social img {
+    width: 40px;
+}
+
+.sol_foot_grupo2 {
+    background-color: #e36504;
+    padding: 15px 10px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+.sol_foot_grupo2 small {
+    font-size: 15px;
+}
+
+/* Opciones Para Footer pequeño */
+@media screen and (max-width:800px) {
+    .sol_cont_footer .sol_foot_grupo1 {
+        width: 100%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+        padding: 35px 0px;
+        text-align: center;
+    }
+}
+
+
+
+
+/* ------------------------------------------------------------------------ */
+
+/* Pagina De La Cotizacion */
+.sol_body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Monserrat', sans-serif;
+    font-weight: 500;
+    margin-top: 70px;
+}
+
+.sol_body h1{
+    font-size: 2.25rem;
+    font-weight: 700;
+}
+
+.sol_body h2{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.sol_split_screen{
+    display: flex;
+    flex-direction: column;
+}
+
+.sol_left{
+    height: 200px;
+    background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.5)),url("../img/Metal.jpeg");
+    background-size: cover;
+}
+
+.sol_left, .sol_right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sol_left .sol_copy{
+    color: white;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.sol_left p{
+    font-weight: 400;
+}
+
+.sol_right{
+    margin-top: 30px;
+}
+.sol_right .sol_copy{
+    color: black;
+    text-align: center;
+}
+
+.sol_right .sol_copy p{
+    margin: 1.5rem 0;
+    font-size: 0.875rem;
+}
+
+.sol_right form{
+    width: 428px;
+}
+
+form input[type="text"], form input[type="email"], textarea{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 1px solid #c4c4c4;
+    padding: 1em;
+    margin-bottom: 1.25rem;
+    font-size: 0.875rem;
+}
+
+.sol_body label{
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.75rem;
+}
+
+.sol_send{
+    display: block;
+    width: 100%;
+    background: #e36504;
+    color: white;
+    font-weight: 700;
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.sol_send:hover{
+    background: #101922;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 900px){
+    .sol_split_screen{
+        flex-direction: row;
+        height: 100vh;
+    }
+
+    .sol_left, .sol_right{
+        display: flex;
+        width: 50%;
+        height: auto;
+    }
+}
