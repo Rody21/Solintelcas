@@ -1,0 +1,256 @@
+.sol_proyectos_main{
+    margin-top: 100px ;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+input{
+    display: none;
+}
+
+.sol_proyec_cont{
+    width: 100%;
+    text-align: center;
+}
+
+.sol_proyec_cont h1{
+    font-weight: normal;
+    font-size: 35px;
+    position: relative;
+    margin: 40px 0;
+}
+
+.sol_proyec_cont h1::before{
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 3px;
+    background-color: crimson;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+    0%{
+        width: 100px;
+    }
+    50%{
+        width: 200px;
+    }
+    100%{
+        width: 100px;
+    }
+}
+
+.sol_top_content{
+    background-color: rgb(221, 221, 221);
+    width: 95%;
+    margin: 0 auto 20px auto;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px lightgray;
+}
+
+.sol_top_content h3{
+    height: 60%;
+    background-color: rgb(221, 221, 221);
+    line-height: 60px;
+    padding: 0 50px;
+    color: white;
+}
+
+.sol_top_content label{
+    display: inline-block;
+    height: 100%;
+    margin: 0 10px;
+    line-height: 30px;
+    font-size: 18px;
+    color: gray;
+    cursor: pointer;
+    transition: color 0.5s;
+}
+
+.sol_top_content label:hover{
+    color: black;
+}
+
+.sol_photo_gallery{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+}
+
+.pic{
+    position: relative;
+    height: 230px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px lightgray;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.pic img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.pic::before{
+    content: "SOLINTELCAS";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    width: 100%;
+    margin-top: -90px;
+    opacity: 0;
+    transition: 0.3s;
+    transition-delay: 0.2s;
+    z-index: 1;
+} 
+
+.pic::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    border-radius: 10px;
+    height: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: 0.3s;
+}
+
+.pic:hover:after{
+    height: 100%;
+}
+
+.pic:hover::before{
+    margin-top: 0;
+    opacity: 1;
+}
+
+/* Cuando se presiona en la categoria */
+
+#check1:checked ~ .sol_proyec_cont .sol_photo_gallery .pic{
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+    transition: 0.5s;
+}
+
+#check2:checked ~ .sol_proyec_cont .sol_photo_gallery .sol_obras{
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+    transition: 0.5s;
+}
+
+#check2:checked ~ .sol_proyec_cont .sol_photo_gallery .sol_Electri,
+#check2:checked ~ .sol_proyec_cont .sol_photo_gallery .sol_pruebas,
+#check2:checked ~ .sol_proyec_cont .sol_photo_gallery .sol_estruct,
+#check2:checked ~ .sol_proyec_cont .sol_photo_gallery .sol_telecom{
+
+    opacity: 0;
+    transform: scale(0);
+    position: absolute;
+    transition: 0s;
+}
+
+#check3:checked ~ .sol_proyec_cont .sol_photo_gallery .sol_Electri{
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+    transition: 0.5s;
+}
+
+#check3:checked ~ .sol_proyec_cont .sol_photo_gallery .sol_obras,
+#check3:checked ~ .sol_proyec_cont .sol_photo_gallery .sol_pruebas,
+#check3:checked ~ .sol_proyec_cont .sol_photo_gallery .sol_estruct,
+#check3:checked ~ .sol_proyec_cont .sol_photo_gallery .sol_telecom{
+    opacity: 0;
+    transform: scale(0);
+    position: absolute;
+    transition: 0s;
+}
+
+#check4:checked ~ .sol_proyec_cont .sol_photo_gallery .sol_pruebas{
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+    transition: 0.5s;
+
+}
+
+#check4:checked ~ .sol_proyec_cont .sol_photo_gallery .sol_obras,
+#check4:checked ~ .sol_proyec_cont .sol_photo_gallery .sol_Electri,
+#check4:checked ~ .sol_proyec_cont .sol_photo_gallery .sol_estruct,
+#check4:checked ~ .sol_proyec_cont .sol_photo_gallery .sol_telecom{
+    opacity: 0;
+    transform: scale(0);
+    position: absolute;
+    transition: 0s;
+}
+
+#check5:checked ~ .sol_proyec_cont .sol_photo_gallery .sol_estruct{
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+    transition: 0.5s;
+
+}
+
+#check5:checked ~ .sol_proyec_cont .sol_photo_gallery .sol_obras,
+#check5:checked ~ .sol_proyec_cont .sol_photo_gallery .sol_Electri,
+#check5:checked ~ .sol_proyec_cont .sol_photo_gallery .sol_pruebas,
+#check5:checked ~ .sol_proyec_cont .sol_photo_gallery .sol_telecom{
+    opacity: 0;
+    transform: scale(0);
+    position: absolute;
+    transition: 0s;
+}
+
+
+#check6:checked ~ .sol_proyec_cont .sol_photo_gallery .sol_telecom{
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+    transition: 0.5s;
+
+}
+
+#check6:checked ~ .sol_proyec_cont .sol_photo_gallery .sol_obras,
+#check6:checked ~ .sol_proyec_cont .sol_photo_gallery .sol_Electri,
+#check6:checked ~ .sol_proyec_cont .sol_photo_gallery .sol_estruct,
+#check6:checked ~ .sol_proyec_cont .sol_photo_gallery .sol_pruebas{
+    opacity: 0;
+    transform: scale(0);
+    position: absolute;
+    transition: 0s;
+}
+
+/* #check7:checked ~ .sol_proyec_cont .sol_photo_gallery .sol_telecom{
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+    transition: 0.5s;
+
+}
+
+#check7:checked ~ .sol_proyec_cont .sol_photo_gallery .sol_obras,
+#check7:checked ~ .sol_proyec_cont .sol_photo_gallery .sol_Electri,
+#check7:checked ~ .sol_proyec_cont .sol_photo_gallery .sol_estruct,
+#check7:checked ~ .sol_proyec_cont .sol_photo_gallery .sol_pruebas{
+    opacity: 0;
+    transform: scale(0);
+    position: absolute;
+    transition: 0s;
+} */
