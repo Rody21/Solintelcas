@@ -33,7 +33,7 @@
     font-size: 5vw;
 }
 
-.sol_sombra p{
+.sol_sombra p {
     font-size: 2vw;
     margin-top: 20px;
 }
@@ -43,7 +43,7 @@
         font-size: calc(6vw);
     }
 
-    .sol_sombra p{
+    .sol_sombra p {
         font-size: calc(4vw);
     }
 }

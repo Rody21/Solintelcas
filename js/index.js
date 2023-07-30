@@ -1,3 +1,3 @@
 (function () {
-    AOS.init();
-}())
+  AOS.init();
+})();
